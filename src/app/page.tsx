@@ -1,69 +1,127 @@
 import Image from "next/image";
+import { WORKS } from "@/lib/works";
+
+const SERVICES = [
+  {
+    title: "AI組み込み開発",
+    desc: "RAG・チャットボット・レポート自動生成など、Claude APIを使った機能を既存・新規のWebアプリに組み込みます。",
+  },
+  {
+    title: "業務自動化ツール",
+    desc: "CSV集計・定型レポート作成・データ整形など、毎月の手作業をWebツール化して自動化します。",
+  },
+  {
+    title: "Webアプリ開発",
+    desc: "Next.js + TypeScriptでの小規模Webアプリ・社内ツール・LPの設計から公開までを一貫して対応します。",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="mx-auto max-w-4xl px-6 pb-20">
+      <section className="py-16 text-center">
+        <p className="text-sm font-medium text-blue-600">AI組み込み・業務自動化のWeb開発</p>
+        <h1 className="mt-2 text-3xl font-bold leading-snug sm:text-4xl">
+          「AIで何ができるか」を、
+          <br className="sm:hidden" />
+          動くデモでお見せします。
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-600">
+          Web開発の実務経験をベースに、Claude APIを組み込んだアプリと業務自動化ツールを開発しています。
+          以下の3つのデモはすべて実際に触れます(APIキー不要のデモモード付き)。
+        </p>
+      </section>
+
+      <section id="works">
+        <h2 className="mb-6 text-xl font-bold">制作デモ</h2>
+        <div className="space-y-8">
+          {WORKS.map((work) => (
+            <article
+              key={work.slug}
+              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <a href={work.demoUrl} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={work.image}
+                  alt={`${work.title}のスクリーンショット`}
+                  width={1280}
+                  height={800}
+                  className="w-full border-b border-gray-100"
+                />
+              </a>
+              <div className="p-6">
+                <h3 className="text-lg font-bold">{work.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{work.desc}</p>
+                <ul className="mt-3 space-y-1 text-sm text-gray-600">
+                  {work.points.map((p) => (
+                    <li key={p}>・{p}</li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-xs text-gray-400">{work.tech.join(" / ")}</p>
+                <div className="mt-4 flex gap-3">
+                  <a
+                    href={work.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+                  >
+                    デモを試す
+                  </a>
+                  <a
+                    href={work.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg border border-gray-300 px-4 py-2 text-sm hover:bg-gray-50"
+                  >
+                    コードを見る(GitHub)
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="services" className="mt-16">
+        <h2 className="mb-6 text-xl font-bold">対応できること</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {SERVICES.map((s) => (
+            <div key={s.title} className="rounded-xl border border-gray-200 bg-white p-5">
+              <h3 className="text-sm font-bold">{s.title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-gray-600">{s.desc}</p>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+        <ul className="mt-6 space-y-1 text-sm text-gray-600">
+          <li>・すべての納品物にユニットテスト・型チェック・コードレビューを実施</li>
+          <li>・訪問者に費用が発生しない「デモモード」設計など、公開前提の安全設計が得意です</li>
+          <li>・要件が固まっていない段階からの壁打ち・提案も歓迎です</li>
+        </ul>
+      </section>
+
+      <section id="contact" className="mt-16 rounded-2xl bg-blue-50 p-8 text-center">
+        <h2 className="text-xl font-bold">お問い合わせ</h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-gray-600">
+          お仕事のご相談は、クラウドソーシングのメッセージ、またはGitHubプロフィール記載の連絡先までお気軽にどうぞ。
+          「こんなことはできる?」という段階のご相談も歓迎です。
+        </p>
+        <a
+          href="https://github.com/ishikawaFmi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-block rounded-lg bg-gray-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-gray-700"
+        >
+          GitHub: ishikawaFmi
+        </a>
+      </section>
+
+      <footer className="mt-16 border-t border-gray-200 pt-6 text-center text-xs text-gray-400">
+        © 2026 ishikawaFmi — このサイト自体もNext.jsで構築しています(
+        <a href="https://github.com/ishikawaFmi/portfolio" className="underline">
+          ソースコード
+        </a>
+        )
+      </footer>
+    </main>
   );
 }
