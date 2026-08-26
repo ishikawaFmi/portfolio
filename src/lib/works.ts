@@ -24,7 +24,7 @@ export const WORKS: Work[] = [
     slug: "ai-chat-widget",
     title: "埋め込み型AIチャットウィジェット",
     desc: "scriptタグ1行で任意のWebサイトに設置できるAIカスタマーサポート。架空ECサイトでの設置デモ付き。",
-    points: ["設置はscriptタグ1行(iframe方式で非干渉)", "店舗情報に基づくマルチターン応答", "第三者サイト設置を想定した堅牢化済み"],
+    points: ["設置はscriptタグ1行(iframe方式で非干渉)", "店舗情報に基づくマルチターン応答", "ホストページのCSS・JSに干渉しないiframe分離設計"],
     tech: ["Next.js", "TypeScript", "Claude API", "Vanilla JS", "Vitest"],
     demoUrl: "https://ai-chat-widget-xi.vercel.app",
     repoUrl: "https://github.com/ishikawaFmi/ai-chat-widget",
