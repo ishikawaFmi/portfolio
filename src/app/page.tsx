@@ -102,17 +102,27 @@ export default function Home() {
       <section id="contact" className="mt-16 rounded-2xl bg-blue-50 p-8 text-center">
         <h2 className="text-xl font-bold">お問い合わせ</h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-gray-600">
-          お仕事のご相談は、クラウドソーシングのメッセージ、またはGitHubプロフィール記載の連絡先までお気軽にどうぞ。
-          「こんなことはできる?」という段階のご相談も歓迎です。
+          お仕事のご相談は、下のお問い合わせフォームからお気軽にどうぞ。
+          「こんなことはできる?」という段階のご相談も歓迎です。通常2営業日以内にメールでご返信します。
         </p>
-        <a
-          href="https://github.com/ishikawaFmi"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-5 inline-block rounded-lg bg-gray-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-gray-700"
-        >
-          GitHub: ishikawaFmi
-        </a>
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
+          <a
+            href="https://forms.gle/QHiJfezcPgqWX5eb6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-700"
+          >
+            お問い合わせフォーム
+          </a>
+          <a
+            href="https://github.com/ishikawaFmi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-lg bg-gray-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-gray-700"
+          >
+            GitHub: ishikawaFmi
+          </a>
+        </div>
       </section>
 
       <footer className="mt-16 border-t border-gray-200 pt-6 text-center text-xs text-gray-400">
