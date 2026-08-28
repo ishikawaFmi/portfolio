@@ -2,7 +2,7 @@
 
 AI組み込み・業務自動化のWeb開発ポートフォリオ。3つの動くデモ(RAG・チャットウィジェット・ダッシュボード)への入口サイトです。
 
-**公開URL:** https://portfolio-gray-six-48.vercel.app
+**公開URL:** https://aikobo.dev
 
 ## 掲載デモ
 

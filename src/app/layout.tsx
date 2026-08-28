@@ -12,9 +12,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "ishikawaFmi | AI組み込み・業務自動化のWeb開発";
+const description =
+  "AI組み込みWebアプリ・業務自動化ツールの開発ポートフォリオ。RAG・チャットボット・ダッシュボードの動くデモを公開中";
+
 export const metadata: Metadata = {
-  title: "ishikawaFmi | AI組み込み・業務自動化のWeb開発",
-  description: "AI組み込みWebアプリ・業務自動化ツールの開発ポートフォリオ。RAG・チャットボット・ダッシュボードの動くデモを公開中",
+  metadataBase: new URL("https://aikobo.dev"),
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: "/",
+    siteName: "ishikawaFmi",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
