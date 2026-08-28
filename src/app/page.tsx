@@ -107,9 +107,6 @@ export default function Home() {
         </a>
       </section>
 
-      <footer className="mt-16 border-t border-gray-200 pt-6 text-center text-xs text-gray-400">
-        © 2026 ishikawaFmi
-      </footer>
     </main>
   );
 }
